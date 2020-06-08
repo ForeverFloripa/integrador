@@ -4,17 +4,11 @@ import java.math.BigDecimal;
 
 public class Produto {
 	
-	private long id;
 	private String codigo;
 	private String descricao;
 	private String grupo;
 	private BigDecimal preco;
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
+	
 	public String getCodigo() {
 		return codigo;
 	}
@@ -43,7 +37,7 @@ public class Produto {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
 		return result;
 	}
 	@Override
@@ -55,15 +49,23 @@ public class Produto {
 		if (getClass() != obj.getClass())
 			return false;
 		Produto other = (Produto) obj;
-		if (id != other.id)
+		if (codigo == null) {
+			if (other.codigo != null)
+				return false;
+		} else if (!codigo.equals(other.codigo))
 			return false;
 		return true;
 	}
-	@Override
-	public String toString() {
-		return "Produto [id=" + id + ", codigo=" + codigo + ", descricao=" + descricao + ", grupo=" + grupo + ", preco="
-				+ preco + "]";
+	public Produto(String codigo, String descricao, String grupo, BigDecimal preco) {
+		super();
+		this.codigo = codigo;
+		this.descricao = descricao;
+		this.grupo = grupo;
+		this.preco = preco;
 	}
+	
+	
+	
 	
 	
 	
