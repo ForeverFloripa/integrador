@@ -42,6 +42,7 @@ public class Recebe {
 		while (linha != null) {
 			System.out.printf("%s\n", linha);
 			linha = lerArq.readLine();
+			
 			if(null != linha && !"".equals(linha) ){
 				Produto produto = new Produto(linha);
 				list.add(produto);
@@ -51,6 +52,7 @@ public class Recebe {
 		return list;
 	}
 
+	
 	public static void lerArquivo() throws IOException {
 
 		System.out.println("Iniciando Importação");
@@ -76,7 +78,7 @@ public class Recebe {
 		String[] splitados = texto.split(SEPARADOR);
 		for (String col : splitados) {
 
-			System.out.print(col + " ");
+			System.out.print(col + "  ");
 		}
 
 	}

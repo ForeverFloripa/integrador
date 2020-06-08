@@ -78,12 +78,10 @@ public class Produto {
 			}
 		}
 	}
-/*
+
 	@Override
 	public String toString() {
 		return "Produto [codigo=" + codigo + ", descricao=" + descricao + ", grupo=" + grupo + ", preco=" + preco + "]";
 	}
-*/
-	
-	
+
 }
