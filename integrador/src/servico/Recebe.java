@@ -16,7 +16,7 @@ public class Recebe {
     public static final String ARQUIVO = "C:\\integracao\\recebe\\produtoslista.CSV";
 
 	public static void main(String[] args) throws IOException {
-			//Produto produto = new Produto();
+			Produto produto = new Produto();
 			
 			//splitando();
 		try {
@@ -33,7 +33,7 @@ public class Recebe {
 		
 		
 	}
-
+//
 	public static List<Produto> carregaProduto() throws IOException {
 		List<Produto> list = new ArrayList<Produto>(0);
 		FileReader arq = new FileReader(ARQUIVO);
@@ -46,6 +46,9 @@ public class Recebe {
 			if(null != linha && !"".equals(linha) ){
 				Produto produto = new Produto(linha);
 				list.add(produto);
+				ProdutoController pc= new ProdutoController();
+				pc.salvar(produto);
+				
 			}
 		}
 
@@ -67,6 +70,7 @@ public class Recebe {
 			String s = null;
 			while ((s = br.readLine()) != null) {
 				System.out.println(s);
+				
 			}
 			br.close();
 		}
